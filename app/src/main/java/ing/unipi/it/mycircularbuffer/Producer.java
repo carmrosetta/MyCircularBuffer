@@ -18,15 +18,17 @@ public class Producer extends Thread {
 
                //for(int i = 0; i < k.length; i++)
         int i = 1;
-        while (i<10001) {
+        while (true) {
+
+            try {
+                Thread.sleep((long) Math.random()*1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
             buffer.putAInteger(i);
             i++;
-//            try {
-//                Thread.sleep(1);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
+
 
         }
 

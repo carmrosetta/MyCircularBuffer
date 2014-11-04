@@ -19,13 +19,18 @@ public class Consumer extends Thread {
            } catch (InterruptedException e) {
                e.printStackTrace();
            }
-            int[] k = buffer.getNIntegers(500);
+            int[] k = buffer.getNIntegers(1000);
         for(int i=0; i < k.length; i++) {
-            Log.e("Consumer", "got "+k[i]);
+            Log.e("Consumer", System.currentTimeMillis()+": got "+k[i]);
 
         }
 
         Log.e("-->", "-----------------------");
+           try {
+               Thread.sleep(2000);
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
 
          }
     }
