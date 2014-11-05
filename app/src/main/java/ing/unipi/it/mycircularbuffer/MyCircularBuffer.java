@@ -17,7 +17,7 @@ public class MyCircularBuffer {
     private Lock lock = new ReentrantLock();
     private Condition notFull = lock.newCondition();
     private Condition notEmpty = lock.newCondition();
-    private Condition enoughData = lock.newCondition();//ci sono tanti dati quanti ne vuole il consumatore
+
 
 
     public MyCircularBuffer(int dim) {
